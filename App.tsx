@@ -7,7 +7,7 @@ import Profile from "./src/Profile";
 const App = () => {
   return (
     <View style={styles.container}>
-      <Profile userName={"samslow"} name={"서현석"} />
+      <Profile userName={"jammie"} name={"윤재진"} />
     </View>
   );
 };

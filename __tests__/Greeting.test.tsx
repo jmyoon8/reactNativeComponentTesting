@@ -6,7 +6,7 @@ import "react-native";
 import React from "react";
 import Greeting from "../src/Greeting";
 
-describe("greetingTest", () => {
+describe("greetingComponent recived Props well?", () => {
   const onPressMock = jest.fn();
   // 내가 greeting 콤퍼넌트에 넘겨줄 값을 정한다.
   const giveProps = {
@@ -15,7 +15,7 @@ describe("greetingTest", () => {
     // 넘겨줄 함수
     onPress: onPressMock,
   };
-  test("버튼이 눌린다.", () => {
+  test("check title Props and onPressButton", () => {
     const rendered = render(<Greeting {...giveProps} />);
 
     for (let i = 0; i < 5; i++) {
@@ -30,6 +30,8 @@ describe("greetingTest", () => {
     let {getByText} = rendered;
     expect(getByText(giveProps.title).props.children).toEqual(giveProps.title);
   });
+  // 위에서처럼 props으로 던진 펑션이 5번눌렸는지
+  // 위에서 처럼 props으로 던진 title이 잘 전달되었는지 확인할수있다.
 });
 
 /**
