@@ -7,6 +7,7 @@ import React from "react";
 import Greeting from "../src/Greeting";
 
 describe("greetingComponent recived Props well?", () => {
+  // 가짜 함수를 만든다(그냥 이런함수가있다 라는 느낌)
   const onPressMock = jest.fn();
   // 내가 greeting 콤퍼넌트에 넘겨줄 값을 정한다.
   const giveProps = {
@@ -15,6 +16,7 @@ describe("greetingComponent recived Props well?", () => {
     // 넘겨줄 함수
     onPress: onPressMock,
   };
+
   test("check title Props and onPressButton", () => {
     const rendered = render(<Greeting {...giveProps} />);
 
@@ -27,8 +29,10 @@ describe("greetingComponent recived Props well?", () => {
     // 위에 for문대로 5번 눌림을 확인
     expect(onPressMock).toBeCalledTimes(5);
     // 내가 props으로 던진 값이 정확히 나오는지확인 1을주면 1이 나와야한다
-    let {getByText} = rendered;
-    expect(getByText(giveProps.title).props.children).toEqual(giveProps.title);
+
+    expect(rendered.getByText(giveProps.title).props.children).toEqual(
+      giveProps.title,
+    );
   });
   // 위에서처럼 props으로 던진 펑션이 5번눌렸는지
   // 위에서 처럼 props으로 던진 title이 잘 전달되었는지 확인할수있다.

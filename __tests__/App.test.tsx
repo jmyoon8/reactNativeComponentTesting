@@ -9,15 +9,9 @@ import React from "react";
 import App from "../App";
 import {render} from "@testing-library/react-native";
 
-function getTempComponent(props: any) {
-  return <App {...props} />;
-}
 describe("renders correctly", () => {
-  let props = {};
-  let component = getTempComponent(props);
-
   test("app renderTest", () => {
-    const renderd = render(component);
+    const renderd = render(<App />);
     // 스냅샷 : 해당 콤포넌트의 상태를 백업해놓는다(상태를 임시적으로 저장함)
     // 스냅샷을 찍게되면 테스파일 같은 레벨에 __snapshots__폴더안에 스냅샷 파일을 생성한다.
     // inline스냅샷 : 해당컴포넌트의 상태를 string화시켜서 자동으로 생성해준다(개꿀!)

@@ -2,8 +2,6 @@ import React from "react";
 import {StyleSheet, View} from "react-native";
 import Profile from "./src/Profile";
 
-// import Profile from './src/Profile';
-
 const App = () => {
   return (
     <View style={styles.container}>

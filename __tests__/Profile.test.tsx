@@ -19,12 +19,16 @@ describe("ProfileComponent recived Props well?", () => {
     expect(userNameHasElement.props.children).toContain(willGiveProps.name);
     expect(userNameHasElement.props.children).toContain(willGiveProps.userName);
   });
-  test("is onPress Button changed message?", () => {
+
+  test("when onPress Button changed message?", () => {
     const rendered = render(<Profile {...willGiveProps} />);
+
     const byeButton = rendered.getByText("Bye!");
     const helloButton = rendered.getByText("Hello!");
+
     fireEvent(byeButton, "onPress");
     rendered.getByText("Seeya!");
+
     fireEvent(helloButton, "onPress");
     rendered.getByText("Welcome!");
   });
